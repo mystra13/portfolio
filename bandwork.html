@@ -24,10 +24,73 @@ body {
   color: white;
 }
 
+.btn {
+  border: none;
+  background-color: #8F57AD;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #38164A;}
+
+.home {color: white;}
+.print {color: white;}
+.logos {color: white;}
+.backgrounds {color: white;}
+.tat {color: white;}
+
+.top-container {
+  background-color: black;
+  padding: 1px;
+  text-align: center;
+}
+
+.header {
+  padding: 1px 1px;
+  background: black;
+  color: black;
+}
+#myHeader {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.content {
+  padding: 1px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 1px;
+}
+
 </style>
 </head>
 
 <body>
+
+<div class="top-container">
+</div>
+<div class="header" id="myHeader">
+<center>
+<a href="https://mystra13.github.io/portfolio/index.html"><button class="btn home">Home</button></a>
+<a href="https://mystra13.github.io/portfolio/logos.html"><button class="btn logos">Logos</button></a>
+<a href="https://mystra13.github.io/portfolio/presentations.html"><button class="btn print">Print &amp; Presentations</button></a>
+<a href="https://mystra13.github.io/portfolio/backgrounds.html"><button class="btn backgrounds">Backgrounds</button></a>
+<a href="https://mystra13.github.io/portfolio/tatcommissions.html"><button class="btn tat">Tatto Design Comissions</button></a>
+</center>
+</div>
+
+<div class="content">
 
 <p class="auto-style2"><strong>2016 ~ 1997<br />
 Album Layouts &amp; Design</strong></p>
@@ -50,6 +113,26 @@ Album Layouts &amp; Design</strong></p>
 <p class="auto-style3"><img alt="" height="221" src="Band-Album-Work/ep%20copy.jpg" width="346" /></p>
 
 <p class="auto-style3"><img alt="" height="399" src="Band-Album-Work/dacav5.jpg" width="450" /></p>
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var spacer = document.getElementById("headerSpacer");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    spacer.style.height = header.offsetHeight + "px";
+  } else {
+    header.classList.remove("sticky");
+    spacer.style.height = "0px";
+  }
+}
+</script>
 
 </body>
 

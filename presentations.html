@@ -21,10 +21,72 @@ body {
   color: white;
 }
 
+.btn {
+  border: none;
+  background-color: #8F57AD;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #38164A;}
+
+.home {color: white;}
+.logos {color: white;}
+.backgrounds {color: white;}
+.bands {color: white;}
+.tat {color: white;}
+
+.top-container {
+  background-color: black;
+  padding: 1px;
+  text-align: center;
+}
+
+.header {
+  padding: 1px 1px;
+  background: black;
+  color: black;
+}
+#myHeader {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.content {
+  padding: 1px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 1px;
+}
+
 </style>
 </head>
 
 <body>
+
+<div class="top-container"></div>
+<div class="header" id="myHeader">
+<center>
+<a href="https://mystra13.github.io/portfolio/index.html"><button class="btn home">Home</button></a>
+<a href="https://mystra13.github.io/portfolio/logos.html"><button class="btn logos">Logos</button></a>
+<a href="https://mystra13.github.io/portfolio/bands.html"><button class="btn bands">Bands</button></a>
+<a href="https://mystra13.github.io/portfolio/backgrounds.html"><button class="btn backgrounds">Backgrounds</button></a>
+<a href="https://mystra13.github.io/portfolio/tatcommissions.html"><button class="btn tat">Tatto Design Comissions</button></a>
+</center>
+</div>
+
+<div class="content">
 
 <p class="auto-style1"><strong>2026 ~ 2003<br />
 Birthdays, Flyers, Promotionals, Events, Advertisements</strong></p>
@@ -41,6 +103,26 @@ Birthdays, Flyers, Promotionals, Events, Advertisements</strong></p>
 <p class="auto-style2"><img alt="" height="807" src="Presentations/2nd_LI_Pirate_Fest_2009.jpg" width="582" /></p>
 
 <p class="auto-style2"><img alt="" height="445" src="Presentations/AutumnBDay.jpg" width="344" /></p>
+
+</div>
+
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var spacer = document.getElementById("headerSpacer");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    spacer.style.height = header.offsetHeight + "px";
+  } else {
+    header.classList.remove("sticky");
+    spacer.style.height = "0px";
+  }
+}
+</script>
 
 </body>
 
