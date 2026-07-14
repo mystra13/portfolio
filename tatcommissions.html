@@ -69,6 +69,55 @@ body {
   padding-top: 1px;
 }
 
+/* The grid: Seven equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 14%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: black;
+  font-size: 35px;
+  cursor: pointer;
+}
+
 </style>
 </head>
 
@@ -86,16 +135,42 @@ body {
 </div>
 
 <div class="content">
-<p class="auto-style1"><span class="auto-style3"><strong>1998 ~ 2021</strong></span></p>
-<p class="auto-style1">
-<img alt="" height="360" src="Tattoos/cthulhu%20copy.jpg" width="450" /> <br />
-<img alt="" height="553" src="Tattoos/jftat3.jpg" width="188" />
-<img alt="" height="553" src="Tattoos/thelemanew.jpg" width="489" />
-<br />
-<img alt="" height="300" src="Tattoos/Wasted_Dreams.jpg" width="300" />&nbsp;&nbsp;
-<img alt="" height="424" src="Tattoos/wuxingbaguataiji_02.jpg" width="424" />
-<img alt="" height="256" src="Tattoos/weddingsymbolbwsign.jpg" width="217" /></p>
+<!-- The grid: seven columns -->
+<div class="row">
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/cthulhu copy.jpg" alt="Cthulhu" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/jftat3.jpg" alt="Family" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/thelemanew.jpg" alt="Thelema" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/Wasted_Dreams.jpg" alt="Dreams" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/weddingsymbolbwsign.jpg" alt="Wedding" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/wuxingbaguataiji_02.jpg" alt="Wuxing" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="href="https://mystra13.github.io/portfolio/Tattoos/Your_Tears.jpg" alt="Tears" onclick="myFunction(this);">
+  </div>
+</div>
 
+<!-- The expanding image container -->
+<div class="container">
+  <!-- Close the image -->
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+
+  <!-- Expanded image -->
+  <img id="expandedImg" style="width:100%">
+
+  <!-- Image text -->
+  <div id="imgtext"></div>
+</div>
 </div>
 
 <script>
@@ -113,6 +188,16 @@ function myFunction() {
     header.classList.remove("sticky");
     spacer.style.height = "0px";
   }
+}
+</script>
+
+<script>
+function myFunction(imgs) {
+  var expandImg = document.getElementById("expandedImg");
+  var imgText = document.getElementById("imgtext");
+  expandImg.src = imgs.src;
+  imgText.innerHTML = imgs.alt;
+  expandImg.parentElement.style.display = "block";
 }
 </script>
 
